@@ -1,0 +1,40 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table classes {
+  id integer [primary key]
+  name varchar [not null]
+  source varchar [not null]
+}
+
+Table subclasses {
+  id integer [primary key]
+  name varchar [not null]
+  class_id integer [ref: > classes.id]
+  source varchar [not null]
+}
+
+Table spells {
+  id integer [primary key]
+  name varchar [not null]
+  level integer [not null]
+  castingTime varchar [not null]
+  school varchar [not null]
+  concentration boolean [not null]
+  range varchar [not null]
+  components varchar [not null]
+  duration varchar [not null]
+  source varchar [not null]
+  class_id integer 
+  subclass_id integer 
+}
+
+Table subclass_spells {
+  subclass_id integer [primary key, ref: - subclasses.id]
+  spell_id integer [primary key, ref: - spells.id]
+}
+
+Table class_spells {
+  class_id integer [primary key, ref: - classes.id]
+  spell_id integer [primary key, ref: - spells.id]
+}
