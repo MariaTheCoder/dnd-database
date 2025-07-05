@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "migration": "node --env-file=.env  migrations/2025-07-05-initial-migration.js"
   },
   "keywords": [],
   "author": "",
