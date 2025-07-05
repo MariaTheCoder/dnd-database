@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "migration": "node --env-file=.env  migrations/2025-07-05-initial-migration.js"
+    "migration": "node --env-file=.env migrations/2025-07-05-initial-migration.js",
+    "seed": "node --env-file=.env seeding/2025-07-05-initial-data.js"
   },
   "keywords": [],
   "author": "",
